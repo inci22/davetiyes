@@ -1,0 +1,204 @@
+<title>İnci &amp; Murat Söz Nişan</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=DM+Sans:wght@400;500;700&display=swap">
+<style>
+/* Düzen: sahnenin ortasında tek bir davetiye kartı (yaklaşık 5x7). Üstte turkuaz isim alanı, ortada altın tarih şeridi, altta mekân ve cevap düğmeleri. */
+:root {
+  --stage: #F9D3DE;
+  --fg: #2A1637;
+  --muted: #65507A;
+  --surface: #FFFFFF;
+  --line: #F0D3DC;
+  --hero-bg: #0E7C7B;
+  --hero-fg: #FFFFFF;
+  --coral: #EF476F;
+  --gold: #FFC857;
+  --gold-ink: #2A1637;
+  --plum: #3B1F5C;
+  --plum-fg: #FFF6FA;
+  --shadow: 0 18px 40px rgba(59, 31, 92, .22);
+  --display: 'Bricolage Grotesque', 'Trebuchet MS', 'Segoe UI', sans-serif;
+  --body: 'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --stage: #130A1D;
+    --fg: #FCEFF4;
+    --muted: #C7B2D4;
+    --surface: #2A1A3B;
+    --line: #4B3463;
+    --hero-bg: #0A5F5E;
+    --coral: #FF6B8E;
+    --gold: #FFD27A;
+    --plum: #3B1F5C;
+    --shadow: 0 18px 40px rgba(0, 0, 0, .5);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --stage: #130A1D;
+  --fg: #FCEFF4;
+  --muted: #C7B2D4;
+  --surface: #2A1A3B;
+  --line: #4B3463;
+  --hero-bg: #0A5F5E;
+  --coral: #FF6B8E;
+  --gold: #FFD27A;
+  --plum: #3B1F5C;
+  --shadow: 0 18px 40px rgba(0, 0, 0, .5);
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--stage);
+  color: var(--fg);
+  font-family: var(--body);
+  font-size: 15px;
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 28px;
+}
+h1, h2, p { margin: 0; }
+
+.card {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 22px;
+  overflow: hidden;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+/* Üst alan */
+.top {
+  background: var(--hero-bg);
+  color: var(--hero-fg);
+  position: relative;
+  overflow: hidden;
+  padding: 34px 20px 36px;
+}
+.dot { position: absolute; border-radius: 50%; pointer-events: none; }
+.dot.d1 { width: 74px; height: 74px; background: var(--gold); top: -26px; left: -18px; }
+.dot.d2 { width: 34px; height: 34px; background: var(--coral); top: 22px; right: 10%; }
+.dot.d3 { width: 90px; height: 90px; background: var(--coral); bottom: -44px; right: -26px; }
+.dot.d4 { width: 20px; height: 20px; background: var(--gold); bottom: 24px; left: 9%; }
+.dot.d5 { width: 10px; height: 10px; background: #fff; opacity: .85; top: 64px; left: 24%; }
+
+.eyebrow {
+  position: relative;
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  background: var(--gold);
+  color: var(--gold-ink);
+  padding: 6px 13px;
+  border-radius: 999px;
+}
+.names {
+  position: relative;
+  font-family: var(--display);
+  font-size: clamp(44px, 14vw, 62px);
+  font-weight: 800;
+  line-height: .98;
+  letter-spacing: -.02em;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-wrap: balance;
+}
+.names .amp { color: var(--gold); font-size: .6em; line-height: 1; margin: 2px 0; }
+.lead { position: relative; margin: 18px auto 0; max-width: 26ch; font-size: 15px; }
+
+/* Tarih şeridi */
+.date {
+  background: var(--gold);
+  color: var(--gold-ink);
+  padding: 18px 20px;
+}
+.date-row { display: flex; justify-content: center; align-items: center; gap: 16px; }
+.day { font-family: var(--display); font-weight: 800; font-size: 60px; line-height: .9; }
+.date-meta { text-align: left; font-family: var(--display); font-weight: 800; font-size: 20px; line-height: 1.2; }
+.date-meta span { display: block; font-family: var(--body); font-weight: 500; font-size: 14px; }
+.count { margin-top: 8px; font-weight: 700; font-size: 13px; }
+
+/* Alt alan */
+.bottom { padding: 22px 20px 24px; }
+.place-label { font-size: 11px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--coral); }
+.place { margin-top: 4px; font-size: 16px; font-weight: 500; }
+.ask { margin-top: 18px; padding-top: 18px; border-top: 2px dotted var(--line); font-size: 14px; color: var(--muted); }
+.actions { display: flex; flex-direction: column; gap: 10px; margin-top: 14px; }
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  border-radius: 999px;
+  font: 700 15px var(--body);
+  text-decoration: none;
+  border: 2px solid var(--plum);
+  cursor: pointer;
+}
+.btn.yes { background: var(--plum); color: var(--plum-fg); }
+.btn.no { background: transparent; color: var(--fg); border-color: var(--line); }
+.btn:focus-visible { outline: 3px solid var(--coral); outline-offset: 3px; }
+.status { margin-top: 12px; min-height: 1.4em; font-size: 13px; color: var(--coral); }
+</style>
+
+<main class="card">
+  <header class="top">
+    <span class="dot d1"></span><span class="dot d2"></span><span class="dot d3"></span><span class="dot d4"></span><span class="dot d5"></span>
+    <span class="eyebrow">Söz &amp; Nişan</span>
+    <h1 class="names"><span>İnci</span><span class="amp">&amp;</span><span>Murat</span></h1>
+    <p class="lead">Mutluluğumuzu sizinle paylaşmak istiyoruz.</p>
+  </header>
+
+  <section class="date" aria-label="Tarih ve saat">
+    <div class="date-row">
+      <div class="day">23</div>
+      <div class="date-meta">Ocak 2027<span>Cumartesi · Saat 19.00</span></div>
+    </div>
+    <p class="count" id="count"></p>
+  </section>
+
+  <section class="bottom">
+    <p class="place-label">Mekân</p>
+    <p class="place">Mekân ve adres bilgisi eklenecek</p>
+
+    <div class="ask" id="rsvp">
+      Katılıp katılamayacağınızı ve kaç kişi geleceğinizi bildirin.
+      <div class="actions">
+        <a class="btn yes" id="yes" href="https://docs.google.com/forms/d/e/1FAIpQLSfc7_n37zJYWvneoNBhYqgF0RpWDWxk8VDclbBbgrrPZ8arAw/viewform?usp=publish-editor" target="_blank" rel="noopener">Katılıyorum</a>
+        <a class="btn no" id="no" href="https://docs.google.com/forms/d/e/1FAIpQLSfc7_n37zJYWvneoNBhYqgF0RpWDWxk8VDclbBbgrrPZ8arAw/viewform?usp=publish-editor" target="_blank" rel="noopener">Katılamıyorum</a>
+      </div>
+      <p class="status" id="status" role="status" aria-live="polite"></p>
+    </div>
+  </section>
+</main>
+
+<script>
+  // Form bağlantısı iki düğmenin href kısmında, betik çalışmasa da düğmeler çalışır.
+  // Bu betik sadece kalan gün sayısını yazar.
+  (function () {
+    try {
+      var target = new Date("2027-01-23T19:00:00+03:00").getTime();
+      var days = Math.ceil((target - Date.now()) / 86400000);
+      var el = document.getElementById("count");
+      if (days > 1) el.textContent = "Törene " + days + " gün kaldı";
+      else if (days === 1) el.textContent = "Tören yarın";
+      else if (days === 0) el.textContent = "Tören bugün";
+    } catch (err) {}
+  })();
+</script>
